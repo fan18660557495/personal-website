@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Home from './pages/Home';
+import ProjectDetail from './pages/ProjectDetail';
+import './assets/fonts/fonts.css';
+
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    background: {
+      default: '#ffffff',
+      paper: '#ffffff',
+    },
+  },
+  typography: {
+    fontFamily: '"Alimama ShuHei", sans-serif',
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project/1" element={<ProjectDetail />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
