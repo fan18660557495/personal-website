@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.117f5924.css",
+    "main.js": "./static/js/main.0534c827.js",
+    "static/js/453.0437a03d.chunk.js": "./static/js/453.0437a03d.chunk.js",
+    "static/media/AlimamaShuHeiTi-Bold.ttf": "./static/media/AlimamaShuHeiTi-Bold.6a14696d36301747cf51.ttf",
+    "index.html": "./index.html",
+    "main.117f5924.css.map": "./static/css/main.117f5924.css.map",
+    "main.0534c827.js.map": "./static/js/main.0534c827.js.map",
+    "453.0437a03d.chunk.js.map": "./static/js/453.0437a03d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.117f5924.css",
+    "static/js/main.0534c827.js"
+  ]
+}
