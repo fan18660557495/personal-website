@@ -9,20 +9,20 @@ const Home: React.FC = () => {
   
   const projects = [
     {
-      image: '/cover1.png',
-      title: 'Kendrick Lamar - GNX',
-      description: 'Album Cover Design',
+      image: `${process.env.PUBLIC_URL}/cover1.png`,
+      title: 'AI Components',
+      description: 'Components for AI',
       path: '/project/1'
     },
     {
-      image: '/cover2.png',
-      title: 'Project 2',
-      description: 'Description for Project 2'
+      image: `${process.env.PUBLIC_URL}/cover2.png`,
+      title: 'Charts Components',
+      description: 'Components for Charts',
     },
     {
-      image: '/cover3.png',
-      title: 'Project 3',
-      description: 'Description for Project 3'
+      image: `${process.env.PUBLIC_URL}/cover3.png`,
+      title: 'Dashboard Components',
+      description: 'Components for Dashboard',
     },
     // 可以添加更多项目
   ];
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         }}>
           <Box
             component="img"
-            src="/avater.png"
+            src={`${process.env.PUBLIC_URL}/avater.png`}
             alt="avatar"
             sx={{
               width: 100,

@@ -40,6 +40,8 @@ const TiltedCard: React.FC<TiltedCardProps> = ({
   displayOverlayContent = false,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -89,6 +91,15 @@ const TiltedCard: React.FC<TiltedCardProps> = ({
     rotateFigcaption.set(0);
   }
 
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleImageError = () => {
+    setIsError(true);
+    setIsLoading(false);
+  };
+
   return (
     <figure
       ref={ref}
@@ -117,14 +128,28 @@ const TiltedCard: React.FC<TiltedCardProps> = ({
           scale,
         }}
       >
+        {isLoading && (
+          <div className="tilted-card-loading">
+            <div className="tilted-card-loading-spinner"></div>
+          </div>
+        )}
+        {isError && (
+          <div className="tilted-card-error">
+            Failed to load image
+          </div>
+        )}
         <motion.img
           src={imageSrc}
           alt={altText}
-          className="tilted-card-img"
+          className={`tilted-card-img ${isLoading ? 'loading' : ''}`}
           style={{
             width: imageWidth,
             height: imageHeight,
+            opacity: isLoading ? 0 : 1,
           }}
+          loading="lazy"
+          onLoad={handleImageLoad}
+          onError={handleImageError}
         />
 
         {displayOverlayContent && overlayContent && (

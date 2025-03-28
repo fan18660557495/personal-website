@@ -23,7 +23,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project/1" element={<ProjectDetail />} />

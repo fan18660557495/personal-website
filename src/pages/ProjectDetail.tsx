@@ -42,7 +42,7 @@ const ProjectDetail: React.FC = () => {
       setIsDownloading(true);
       // 创建一个临时的 a 标签来触发下载
       const link = document.createElement('a');
-      link.href = '/AI chat.fig';
+      link.href = `${process.env.PUBLIC_URL}/AI chat.fig`;
       link.download = 'AI chat.fig';
       document.body.appendChild(link);
       link.click();
@@ -127,7 +127,7 @@ const ProjectDetail: React.FC = () => {
           }}>
             <Box
               component="img"
-              src="/cover1.png"
+              src={`${process.env.PUBLIC_URL}/cover1.png`}
               alt="Kendrick Lamar - GNX"
               sx={{
                 width: '100%',
@@ -185,19 +185,36 @@ const ProjectDetail: React.FC = () => {
               <Button
                 variant="outlined"
                 fullWidth
-                onClick={() => window.open('https://fan18660557495.github.io/AIchat/', '_blank')}
+                onClick={() => window.open('http://www.esunrising.net:8817/ChatBot/', '_blank')}
                 sx={{
-                  borderRadius: '8px',
                   borderColor: '#333',
                   color: '#333',
+                  borderRadius: '8px',
                   '&:hover': {
+                    borderColor: '#000',
                     bgcolor: '#000',
-                    color: '#fff',
-                    borderColor: '#000'
+                    color: '#fff'
                   }
                 }}
               >
                 试用demo
+              </Button>
+              <Button
+                variant="outlined"
+                fullWidth
+                onClick={() => window.open('https://github.com/fan18660557495/ChatBot', '_blank')}
+                sx={{
+                  borderColor: '#333',
+                  color: '#333',
+                  borderRadius: '8px',
+                  '&:hover': {
+                    borderColor: '#000',
+                    bgcolor: '#000',
+                    color: '#fff'
+                  }
+                }}
+              >
+                前往Github
               </Button>
             </Box>
           </Box>
@@ -290,8 +307,8 @@ const ProjectDetail: React.FC = () => {
                     }
                   }}
                 >
-                  <Tab label="设计介绍" />
-                  <Tab label="代码介绍" />
+                  <Tab label="组件介绍" />
+                  <Tab label="试用Demo介绍" />
                 </Tabs>
               </Box>
 
@@ -304,7 +321,7 @@ const ProjectDetail: React.FC = () => {
                     color: '#333'
                   }}
                 >
-                  设计介绍
+                  组件介绍
                 </Typography>
                 <Typography 
                   variant="subtitle1" 
@@ -504,21 +521,33 @@ const ProjectDetail: React.FC = () => {
                     color: '#333'
                   }}
                 >
-                  代码介绍
+                  试用Demo介绍
                 </Typography>
+
                 <Typography 
                   variant="body1" 
                   sx={{ 
-                    lineHeight: 1.8,
+                    mb: 3,
                     color: '#333',
-                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                    mb: 2
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                   }}
                 >
-                  本组件库采用现代化的技术栈，代码结构清晰，易于维护和扩展。主要特点包括：
+                  本资源库通过Figma-context-MCP 和 Cursor编写，由我本人进行优化和完善。
+                </Typography>
+
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    mb: 2,
+                    fontWeight: 600,
+                    color: '#333'
+                  }}
+                >
+                  技术栈
                 </Typography>
                 <List sx={{ 
-                  p: 1
+                  p: 1,
+                  mb: 3
                 }}>
                   <ListItem sx={{ 
                     py: 0.5,
@@ -534,7 +563,7 @@ const ProjectDetail: React.FC = () => {
                       mr: 2
                     }} />
                     <ListItemText 
-                      primary="基于 React 和 TypeScript，提供完整的类型支持"
+                      primary="React 18"
                       sx={{
                         '& .MuiListItemText-primary': {
                           color: '#333',
@@ -558,7 +587,7 @@ const ProjectDetail: React.FC = () => {
                       mr: 2
                     }} />
                     <ListItemText 
-                      primary="使用 Material-UI 作为基础组件库，确保组件质量"
+                      primary="TypeScript"
                       sx={{
                         '& .MuiListItemText-primary': {
                           color: '#333',
@@ -582,7 +611,79 @@ const ProjectDetail: React.FC = () => {
                       mr: 2
                     }} />
                     <ListItemText 
-                      primary="完善的文档和示例，方便开发者使用"
+                      primary="Material-UI (MUI)"
+                      sx={{
+                        '& .MuiListItemText-primary': {
+                          color: '#333',
+                          fontSize: '0.95rem',
+                          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                        }
+                      }}
+                    />
+                  </ListItem>
+                  <ListItem sx={{ 
+                    py: 0.5,
+                    display: 'flex',
+                    alignItems: 'flex-start'
+                  }}>
+                    <Box sx={{ 
+                      width: '6px', 
+                      height: '6px', 
+                      borderRadius: '50%', 
+                      bgcolor: '#666',
+                      mt: 1.5,
+                      mr: 2
+                    }} />
+                    <ListItemText 
+                      primary="Styled Components"
+                      sx={{
+                        '& .MuiListItemText-primary': {
+                          color: '#333',
+                          fontSize: '0.95rem',
+                          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                        }
+                      }}
+                    />
+                  </ListItem>
+                  <ListItem sx={{ 
+                    py: 0.5,
+                    display: 'flex',
+                    alignItems: 'flex-start'
+                  }}>
+                    <Box sx={{ 
+                      width: '6px', 
+                      height: '6px', 
+                      borderRadius: '50%', 
+                      bgcolor: '#666',
+                      mt: 1.5,
+                      mr: 2
+                    }} />
+                    <ListItemText 
+                      primary="React Router DOM"
+                      sx={{
+                        '& .MuiListItemText-primary': {
+                          color: '#333',
+                          fontSize: '0.95rem',
+                          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                        }
+                      }}
+                    />
+                  </ListItem>
+                  <ListItem sx={{ 
+                    py: 0.5,
+                    display: 'flex',
+                    alignItems: 'flex-start'
+                  }}>
+                    <Box sx={{ 
+                      width: '6px', 
+                      height: '6px', 
+                      borderRadius: '50%', 
+                      bgcolor: '#666',
+                      mt: 1.5,
+                      mr: 2
+                    }} />
+                    <ListItemText 
+                      primary="React Markdown (支持 Markdown 渲染)"
                       sx={{
                         '& .MuiListItemText-primary': {
                           color: '#333',
@@ -593,6 +694,67 @@ const ProjectDetail: React.FC = () => {
                     />
                   </ListItem>
                 </List>
+
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    mb: 2,
+                    fontWeight: 600,
+                    color: '#333'
+                  }}
+                >
+                  项目结构
+                </Typography>
+                <Box sx={{ 
+                  background: '#f8f9fa',
+                  borderRadius: '8px',
+                  p: 2,
+                  mb: 2,
+                  overflowX: 'auto',
+                  '&::-webkit-scrollbar': {
+                    height: '8px'
+                  },
+                  '&::-webkit-scrollbar-track': {
+                    background: '#f1f1f1'
+                  },
+                  '&::-webkit-scrollbar-thumb': {
+                    background: '#888',
+                    borderRadius: '4px',
+                    '&:hover': {
+                      background: '#555'
+                    }
+                  }
+                }}>
+                  <pre style={{ 
+                    fontFamily: 'Consolas, Monaco, monospace',
+                    whiteSpace: 'pre-wrap',
+                    color: '#333',
+                    lineHeight: 1.5,
+                    fontSize: '0.9rem',
+                    margin: 0
+                  }}>
+{`frontend/
+├── public/                 # 静态资源目录
+│   ├── 404.html           # 404页面，用于GitHub Pages路由处理
+│   └── index.html         # 主HTML文件
+├── src/
+│   ├── components/        # React组件
+│   │   ├── ChatArea.tsx   # 聊天区域组件（主要聊天界面）
+│   │   ├── MessageBubble.tsx  # 消息气泡组件
+│   │   ├── TextInput.tsx  # 文本输入组件
+│   │   ├── RenameModal.tsx # 重命名对话框组件
+│   │   ├── Sidebar.tsx    # 侧边栏组件
+│   │   ├── Loading.tsx    # 加载状态组件
+│   │   ├── SuggestedQuestions.tsx # 建议问题组件
+│   │   └── Tooltip.tsx    # 工具提示组件
+│   ├── services/          # API服务
+│   ├── utils/             # 工具函数
+│   ├── types/             # TypeScript类型定义
+│   ├── assets/            # 资源文件
+│   ├── App.tsx            # 主应用组件
+│   └── index.tsx          # 应用入口文件`}
+                  </pre>
+                </Box>
               </TabPanel>
             </Box>
           </Box>
